@@ -1,0 +1,8 @@
+name    'ericsson-beuser'
+version '0.1.0'
+source 'https://github.com/Ericsson/puppet-module-beuser.git'
+author 'ericsson'
+license 'Apache License, Version 2.0'
+summary 'Manage beuser sudo wrapper'
+description 'Manage beuser sudo wrapper'
+project_page 'https://github.com/Ericsson/puppet-module-beuser'
