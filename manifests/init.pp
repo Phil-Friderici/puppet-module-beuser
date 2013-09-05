@@ -18,7 +18,7 @@ class beuser(
             $suffix = 'sol10x64'
           }
         }
-        /^5.9/ : {
+        /^9/ : {
           if $::hardwareisa == 'sparc' {
             $suffix = 'sol10sparc'
           } else {
