@@ -3,7 +3,7 @@ class beuser(
   $srcdir  = '/opt/eis_cm_repos/eis_cm_repo/beuser',
   $dstdir  = '/bin',
   $binname = 'beuser',
-  $mode    = '0755',
+  $mode    = '4755',
   $owner   = 'root',
   $group   = 'root',
 ) {
@@ -94,7 +94,7 @@ class beuser(
       }
     }
     default : {
-      warning( "${::operatingsystem} ${::operatingsystemrelease} is not supported by module beuser" )
+      fail( "OS is not supported by module beuser" )
     }
   }
 
