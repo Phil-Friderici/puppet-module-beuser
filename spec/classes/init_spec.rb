@@ -41,7 +41,7 @@ describe 'beuser' do
         'path'   => '/bin/beuser',
         'owner'  => 'root',
         'group'  => 'root',
-        'mode'   => '04755',
+        'mode'   => '4755',
       } )
     }
   end
@@ -64,7 +64,7 @@ describe 'beuser' do
         'path'   => '/bin/beuser',
         'owner'  => 'root',
         'group'  => 'root',
-        'mode'   => '04755',
+        'mode'   => '4755',
       } )
     }
   end
@@ -86,7 +86,7 @@ describe 'beuser' do
         'path'   => '/bin/beuser',
         'owner'  => 'root',
         'group'  => 'root',
-        'mode'   => '04755',
+        'mode'   => '4755',
       } )
     }
   end
@@ -108,7 +108,7 @@ describe 'beuser' do
         'path'   => '/bin/beuser',
         'owner'  => 'root',
         'group'  => 'root',
-        'mode'   => '04755',
+        'mode'   => '4755',
       } )
     }
   end
