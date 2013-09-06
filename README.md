@@ -3,6 +3,17 @@ puppet-module-beuser
 
 Puppet module to manage beuser sudo wrapper
 
+Description
+====================
+
+This module is for Ericsson internal use.
+It installs the ''beuser'' wrapper for sudo used by Service Desk. 
+
+Parameters
+====================
+
+None
+
 # Compatibility #
 * Solaris 10 x86 & sparc
 * Solaris 11 x86 & sparc

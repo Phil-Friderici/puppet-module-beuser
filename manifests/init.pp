@@ -8,7 +8,7 @@ class beuser(
   $group   = 'root',
 ) {
 
-  case $::operatingsystem {
+  case $::osfamily {
     'Solaris' : {
       case $::operatingsystemrelease {
         /(^5.1[01])|(^10)/ : {
@@ -30,7 +30,7 @@ class beuser(
         }
       }
     }
-    /(?i:sle[ds])/ : {
+    'Suse' : {
       case $::operatingsystemrelease {
         /^10/ : {
           if $::architecture == 'x86_64' {
@@ -58,7 +58,7 @@ class beuser(
         }
       }
     }
-    /(?i:^RHE)|(?i:^RedH)/ : {
+    'RedHat' : {
       case $::operatingsystemrelease {
         /^5/ : {
           if $::architecture == 'x86_64' {
@@ -79,9 +79,9 @@ class beuser(
         }
       }
     }
-    /(?i:^Ubuntu)/ : {
+    'Debian' : {
       case $::operatingsystemrelease {
-        /^12.04/ : {
+        '12.04' : {
           if $::architecture == 'x86_64' {
             $suffix = 'ubuntu1204x64'
           } else {
@@ -98,12 +98,14 @@ class beuser(
     }
   }
 
-  file { 'beuser' :
-    ensure => $ensure,
-    path => "${dstdir}/${binname}",
-    source => "${srcdir}/${binname}.${suffix}",
-    mode   => $mode,
-    owner  => $owner,
-    group  => $group,
+  if $suffix != undef {
+    file { 'beuser' :
+      ensure => $ensure,
+      path => "${dstdir}/${binname}",
+      source => "${srcdir}/${binname}.${suffix}",
+      mode   => $mode,
+      owner  => $owner,
+      group  => $group,
+    }
   }
 }
