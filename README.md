@@ -23,30 +23,42 @@ of an admin and then use the unrestricted commands for them.
 Parameters
 ====================
 
-$srcdir
+srcdir
+------
 From where to copy the binary (file name is taken according to OS).
-Default: '/opt/eis_cm_repos/eis_cm_repo/beuser'
 
-$dstdir
+- *Default*: '/opt/eis_cm_repos/eis_cm_repo/beuser'
+
+dstdir
+------
 Where to install the beuser binary locally.
-Default: '/bin'
 
-$binname
+- *Default*: '/bin'
+
+binname
+-------
 File name of the binary to be installed.
-Default: 'beuser'
 
-$mode
+- *Default*: 'beuser'
+
+mode
+----
 File permissions the binary shall have.
 To enable setuid, use something like: '4755'
-Default: '0755'
 
-$owner
+- *Default*: '0755'
+
+owner
+-----
 User the binary shall belong to.
-Default: 'root'
 
-$group
+- *Default*: 'root'
+
+group
+-----
 Group the bindary shall belong to.
-Default: 'root'
+
+- *Default*: 'root'
 
 # Compatibility #
 * Solaris 10 x86 & sparc
