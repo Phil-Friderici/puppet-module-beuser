@@ -3,7 +3,7 @@ class beuser(
   $srcdir  = '/opt/eis_cm_repos/eis_cm_repo/beuser',
   $dstdir  = '/bin',
   $binname = 'beuser',
-  $mode    = '4755',
+  $mode    = '0755',
   $owner   = 'root',
   $group   = 'root',
 ) {
