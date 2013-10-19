@@ -1,5 +1,5 @@
 name    'ericsson-beuser'
-version '0.1.0'
+version '0.1.1'
 source 'https://github.com/Ericsson/puppet-module-beuser.git'
 author 'ericsson'
 license 'Apache License, Version 2.0'

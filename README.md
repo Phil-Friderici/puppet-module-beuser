@@ -9,14 +9,14 @@ Description
 This module is for Ericsson internal use.
 It installs the ''beuser'' wrapper for sudo used by Service Desk.
 ''beuser'' is an alternative for su, which allows changing active uid.
-The restriction is, that you can only ''su'' to users with a uid > 100.
-The idea is, to allow Service Desk work-force to ''su'' towards others
+The restriction is that you can only ''su'' to users with a uid > 100.
+The idea is to allow Service Desk work-force to ''su'' towards others
 user-ids they are supporting. However, they are not supposed to get
 administrative access on the systems themselves.
 
-Note, that when you allow ''beuser'' to be execute by non-admins
-(whether by sudo (preferred) or setuid), you must make sure, that the
-admins on the system have no sudo entries, which allow command invocation
+Note, that when you allow ''beuser'' to be executed by non-admins,
+whether by sudo (preferred) or setuid, you must make sure that the
+admins on the system have no sudo entries which allow command invocation
 without password. Otherwise users can use ''beuser'' to aquire an account
 of an admin and then use the unrestricted commands for them.
 
@@ -56,7 +56,7 @@ User the binary shall belong to.
 
 group
 -----
-Group the bindary shall belong to.
+Group the binary shall belong to.
 
 - *Default*: 'root'
 
