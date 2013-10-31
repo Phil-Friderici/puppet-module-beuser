@@ -2,124 +2,53 @@ require 'spec_helper'
 
 describe 'beuser' do
 
-  describe 'Solaris should include beuser binary' do
+  describe 'Presets as normal' do
 
-    let :facts do
+    it { should include_class('beuser') }
+
+    it {
+      should contain_package( 'beuser' ).with( {
+        'ensure'  => 'present',
+        'name'    => 'beuser',
+      } )
+    }
+  end
+
+  describe 'Changed package name' do
+
+    let :params do
       {
-        :osfamily                => 'Solaris',
-        :operatingsystemrelease  => '10',
+        :ensure       => 'present',
+        :package_name => 'beuser_test',
       }
     end
 
     it { should include_class('beuser') }
 
     it {
-      should contain_file( 'beuser' ).with( {
-        'ensure' => 'present',
-        'path'   => '/bin/beuser',
-        'owner'  => 'root',
-        'group'  => 'root',
-        'mode'   => '0755',
+      should contain_package( 'beuser' ).with( {
+        'ensure'  => 'present',
+        'name'    => 'beuser_test',
       } )
     }
   end
 
-  describe 'Suse should include beuser binary' do
+  describe 'Set to absent' do
 
-    let :facts do
+    let :params do
       {
-        :osfamily          => 'Suse',
-        :operatingsystemrelease  => '10',
+        :ensure         => 'absent',
+        :package_name   => 'beuser',
       }
     end
 
     it { should include_class('beuser') }
 
     it {
-      should contain_file( 'beuser' ).with( {
-        'ensure' => 'present',
-        'path'   => '/bin/beuser',
-        'owner'  => 'root',
-        'group'  => 'root',
-        'mode'   => '0755',
+      should contain_package( 'beuser' ).with( {
+        'ensure'  => 'absent',
+        'name'    => 'beuser',
       } )
     }
-  end
-
-  describe 'Debian should include beuser binary' do
-
-    let :facts do
-      {
-        :osfamily                => 'Debian',
-        :operatingsystemrelease  => '12.04',
-        :architecture            => 'x86_64',
-      }
-    end
-
-    it { should include_class('beuser') }
-
-    it {
-      should contain_file( 'beuser' ).with( {
-        'ensure' => 'present',
-        'path'   => '/bin/beuser',
-        'owner'  => 'root',
-        'group'  => 'root',
-        'mode'   => '0755',
-      } )
-    }
-  end
-
-  describe 'RHEL 6 should include beuser binary' do
-
-    let :facts do
-      {
-        :osfamily          => 'RedHat',
-        :operatingsystemrelease => '6.4',
-      }
-    end
-
-    it { should include_class('beuser') }
-
-    it {
-      should contain_file( 'beuser' ).with( {
-        'ensure' => 'present',
-        'path'   => '/bin/beuser',
-        'owner'  => 'root',
-        'group'  => 'root',
-        'mode'   => '0755',
-      } )
-    }
-  end
-
-  describe 'RHEL 5 should include beuser binary' do
-
-    let :facts do
-      {
-        :osfamily          => 'RedHat',
-        :operatingsystemrelease => '5.7',
-      }
-    end
-
-    it { should include_class('beuser') }
-
-    it {
-      should contain_file( 'beuser' ).with( {
-        'ensure' => 'present',
-        'path'   => '/bin/beuser',
-        'owner'  => 'root',
-        'group'  => 'root',
-        'mode'   => '0755',
-      } )
-    }
-  end
-
-  describe 'Gentoo systems should fail' do
-    let(:facts) { {:osfamily => 'Gentoo' } }
-
-    it do
-      expect {
-        should include_class('beuser')
-      }.to raise_error(Puppet::Error,/OS is not supported by module beuser./)
-    end
   end
 end
