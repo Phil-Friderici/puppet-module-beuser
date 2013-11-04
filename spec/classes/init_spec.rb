@@ -2,24 +2,27 @@ require 'spec_helper'
 
 describe 'beuser' do
 
-  describe 'Presets as normal' do
+  describe 'with default values for parameters' do
 
     it { should include_class('beuser') }
 
     it {
       should contain_package( 'beuser' ).with( {
-        'ensure'  => 'present',
-        'name'    => 'beuser',
+        'ensure' => 'present',
+        'name'   => 'beuser',
       } )
     }
   end
 
-  describe 'Changed package name' do
+  describe 'with custom values for parameters' do
 
     let :params do
       {
         :ensure       => 'present',
         :package_name => 'beuser_test',
+        :adminfile    => '/net/nfsserv1/beuser-adminfile',
+        :provider     => 'sun',
+        :source       => '/net/nfsserv1/beuser-1.0.pkg',
       }
     end
 
@@ -27,18 +30,20 @@ describe 'beuser' do
 
     it {
       should contain_package( 'beuser' ).with( {
-        'ensure'  => 'present',
-        'name'    => 'beuser_test',
+        'ensure'    => 'present',
+        'name'      => 'beuser_test',
+        'adminfile' => '/net/nfsserv1/beuser-adminfile',
+        'provider'  => 'sun',
+        'source'    => '/net/nfsserv1/beuser-1.0.pkg',
       } )
     }
   end
 
-  describe 'Set to absent' do
+  describe 'with ensure absent' do
 
     let :params do
       {
         :ensure         => 'absent',
-        :package_name   => 'beuser',
       }
     end
 
