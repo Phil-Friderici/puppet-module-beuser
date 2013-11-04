@@ -1,3 +1,7 @@
+# == Class: beuser
+#
+# Manage beuser
+#
 class beuser (
   $ensure         = 'present',
   $package_name   = 'beuser',
