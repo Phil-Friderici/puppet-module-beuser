@@ -7,25 +7,10 @@ class beuser (
 ) {
 
   package { 'beuser':
-    ensure => $ensure,
-    name   => $package_name,
-  }
-
-  if $provider != undef {
-    Package['beuser'] {
-      provider => $provider,
-    }
-  }
-
-  if $source != undef {
-    Package['beuser'] {
-      source => $source,
-    }
-  }
-
-  if $adminfile != undef {
-    Package['beuser'] {
-      adminfile => $adminfile,
-    }
+    ensure    => $ensure,
+    name      => $package_name,
+    adminfile => $adminfile,
+    provider  => $provider,
+    source    => $source,
   }
 }
