@@ -6,3 +6,5 @@ license 'Apache License, Version 2.0'
 summary 'Manage beuser sudo wrapper'
 description 'Manage beuser sudo wrapper'
 project_page 'https://github.com/Ericsson/puppet-module-beuser'
+
+dependency 'puppetlabs/stdlib', '3.2.x'

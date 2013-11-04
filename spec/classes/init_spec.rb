@@ -56,4 +56,49 @@ describe 'beuser' do
       } )
     }
   end
+
+  describe 'with invalid path for adminfile' do
+
+    let :params do
+      {
+        :adminfile => 'not/a/valid/path',
+      }
+    end
+
+    it 'should fail' do
+      expect {
+        should include_class('beuser')
+      }.to raise_error(Puppet::Error)
+    end
+  end
+
+  describe 'with invalid provider' do
+
+    let :params do
+      {
+        :provider => '!invalid-provider-name'
+      }
+    end
+
+    it 'should fail' do
+      expect {
+        should include_class('beuser')
+      }.to raise_error(Puppet::Error,/beuser::provider is <!invalid-provider-name>, which does not match regex for an acceptable name./)
+    end
+  end
+
+  describe 'with invalid path for source' do
+
+    let :params do
+      {
+        :source => 'not/a/valid/path',
+      }
+    end
+
+    it 'should fail' do
+      expect {
+        should include_class('beuser')
+      }.to raise_error(Puppet::Error)
+    end
+  end
 end
