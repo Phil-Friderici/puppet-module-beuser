@@ -38,7 +38,32 @@ Name of package to be installed
 
 - *Default*: 'beuser'
 
+adminfile
+---------
+Path to adminfile used on Solaris
+
+- *Default*: undef
+
+provider
+--------
+Name of package provider
+
+- *Default*: undef (OS default)
+
+source
+------
+Source of package file. Used with provider 'sun'
+
+- *Default*: undef
+
 
 # Compatibility #
 
-Any platform with a beuser package 
+Any platform with a beuser package
+
+For Solaris it is recommended to use the osfamily fact in hiera.yaml and have Solaris.yaml include:
+<pre>
+---
+beuser::source: '/net/nfsserv1/beuser-1.0.pkg'
+beuser::adminfile: '/net/nfsserv1/beuser-adminfile'
+</pre>
