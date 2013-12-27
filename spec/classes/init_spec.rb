@@ -4,7 +4,7 @@ describe 'beuser' do
 
   describe 'with default values for parameters' do
 
-    it { should include_class('beuser') }
+    it { should contain_class('beuser') }
 
     it {
       should contain_package( 'beuser' ).with( {
@@ -26,7 +26,7 @@ describe 'beuser' do
       }
     end
 
-    it { should include_class('beuser') }
+    it { should contain_class('beuser') }
 
     it {
       should contain_package( 'beuser' ).with( {
@@ -47,7 +47,7 @@ describe 'beuser' do
       }
     end
 
-    it { should include_class('beuser') }
+    it { should contain_class('beuser') }
 
     it {
       should contain_package( 'beuser' ).with( {
@@ -67,7 +67,7 @@ describe 'beuser' do
 
     it 'should fail' do
       expect {
-        should include_class('beuser')
+        should contain_class('beuser')
       }.to raise_error(Puppet::Error)
     end
   end
@@ -82,7 +82,7 @@ describe 'beuser' do
 
     it 'should fail' do
       expect {
-        should include_class('beuser')
+        should contain_class('beuser')
       }.to raise_error(Puppet::Error,/beuser::provider is <!invalid-provider-name>, which does not match regex for an acceptable name./)
     end
   end
@@ -97,7 +97,7 @@ describe 'beuser' do
 
     it 'should fail' do
       expect {
-        should include_class('beuser')
+        should contain_class('beuser')
       }.to raise_error(Puppet::Error)
     end
   end
