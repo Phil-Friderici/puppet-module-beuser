@@ -1,2 +1,2 @@
-class { 'beuser' : }
+class { '::beuser' : }
 
