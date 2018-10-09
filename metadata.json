@@ -1,0 +1,67 @@
+{
+  "name": "ericsson-beuser",
+  "version": "1.1.1",
+  "author": "ericsson",
+  "summary": "Manage beuser sudo wrapper",
+  "license": "Apache-2.0",
+  "source": "git@github.com:Ericsson/puppet-module-beuser.git",
+  "project_page": "https://github.com/Ericsson/puppet-module-beuser",
+  "issues_url": "https://github.com/Ericsson/puppet-module-beuser/issues",
+  "_!!!_comment_!!!_": "there was no information about tested operatingssystem support, below is a wild guess only!",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Solaris",
+      "operatingsystemrelease": [
+        "10"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "SLED",
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.0.0 < 6.0.0"
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 3.2.0 < 5.0.0"}
+  ]
+}
