@@ -11,48 +11,27 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
-        "5",
-        "6",
-        "7"
-      ]
+      "operatingsystemrelease": ["5","6","7"]
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "5",
-        "6",
-        "7"
-      ]
+      "operatingsystemrelease": ["5","6","7"]
     },
     {
       "operatingsystem": "Solaris",
-      "operatingsystemrelease": [
-        "10"
-      ]
+      "operatingsystemrelease": ["10"]
     },
     {
       "operatingsystem": "SLES",
-      "operatingsystemrelease": [
-        "10",
-        "11",
-        "12"
-      ]
+      "operatingsystemrelease": ["10","11","12"]
     },
     {
       "operatingsystem": "SLED",
-      "operatingsystemrelease": [
-        "10",
-        "11",
-        "12"
-      ]
+      "operatingsystemrelease": ["10","11","12"]
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [
-        "12.04",
-        "14.04"
-      ]
+      "operatingsystemrelease": ["12.04","14.04"]
     }
   ],
   "requirements": [
