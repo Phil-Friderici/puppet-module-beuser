@@ -7,31 +7,57 @@
   "source": "git@github.com:Ericsson/puppet-module-beuser.git",
   "project_page": "https://github.com/Ericsson/puppet-module-beuser",
   "issues_url": "https://github.com/Ericsson/puppet-module-beuser/issues",
-  "_!!!_comment_!!!_": "there was no information about tested operatingssystem support, below is a wild guess only!",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0 < 5.0.0"
+    }
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": ["5","6","7"]
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": ["5","6","7"]
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
     },
     {
       "operatingsystem": "Solaris",
-      "operatingsystemrelease": ["10"]
+      "operatingsystemrelease": [
+        "10"
+      ]
     },
     {
       "operatingsystem": "SLES",
-      "operatingsystemrelease": ["10","11","12"]
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
     },
     {
       "operatingsystem": "SLED",
-      "operatingsystemrelease": ["10","11","12"]
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": ["12.04","14.04"]
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
     }
   ],
   "requirements": [
@@ -40,7 +66,8 @@
       "version_requirement": ">= 3.0.0 < 7.0.0"
     }
   ],
-  "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 3.2.0 < 5.0.0"}
-  ]
+  "_!!!_comment_!!!_": "there was no information about tested operatingssystem support, it is a wild guess only!",
+  "pdk-version": "1.7.1",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.7.1-0-g810b982"
 }
